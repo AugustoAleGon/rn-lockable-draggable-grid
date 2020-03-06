@@ -1,9 +1,12 @@
 {
-  "name": "react-native-draggable-grid",
+  "name": "rn-lockable-draggable-grid",
   "keywords": [
     "drag",
+    "drop",
     "sortable",
-    "grid"
+    "lockable",
+    "grid",
+    "drag and drop"
   ],
   "version": "2.0.0",
   "description": "A draggable grid for react native",
@@ -11,7 +14,7 @@
   "types": "src/index.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SHISME/react-native-draggable-grid"
+    "url": "https://github.com/tailwind/rn-lockable-draggable-grid"
   },
   "scripts": {
     "built": "rm -rf built && tsc",
