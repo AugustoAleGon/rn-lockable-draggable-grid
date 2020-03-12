@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo } from 'react'
 import {
   PanResponder,
   Animated,
@@ -382,7 +382,8 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
           height: gridLayout.height,
         },
       ]}
-      onLayout={assessGridSize}>
+      onLayout={assessGridSize}
+      useNativeDriver={true}>
       {hadInitBlockSize && itemList}
     </Animated.View>
   )
