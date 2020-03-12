@@ -1,5 +1,5 @@
 {
-  "name": "rn-lockable-draggable-grid",
+  "name": "@tailwindapp/rn-lockable-draggable-grid",
   "keywords": [
     "drag",
     "drop",
@@ -14,7 +14,7 @@
   "types": "src/index.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tailwind/rn-lockable-draggable-grid"
+    "url": "git+https://github.com/tailwind/rn-lockable-draggable-grid.git"
   },
   "scripts": {
     "built": "rm -rf built && tsc",
@@ -61,5 +61,13 @@
   "peerDependencies": {
     "react": "^16.0.0",
     "react-native": "*"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/tailwind/rn-lockable-draggable-grid/issues"
+  },
+  "homepage": "https://github.com/tailwind/rn-lockable-draggable-grid#readme",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {}
 }
