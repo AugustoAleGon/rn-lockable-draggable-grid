@@ -372,7 +372,7 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
       </Block>
     )
   })
-
+  
   return (
     <Animated.View
       style={[
@@ -382,11 +382,12 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
           height: gridLayout.height,
         },
       ]}
-      onLayout={assessGridSize}>
+      onLayout={assessGridSize}
+      useNativeDriver={true}>
       {hadInitBlockSize && itemList}
     </Animated.View>
   )
-}
+};
 
 const styles = StyleSheet.create({
   draggableGrid: {
