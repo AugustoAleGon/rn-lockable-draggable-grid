@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useEffect, memo } from 'react'
+import { useState, useEffect } from 'react'
 import {
   PanResponder,
   Animated,
@@ -56,7 +56,7 @@ const itemMap: {
 } = {}
 const items: IItem<any>[] = []
 
-export const DraggableGrid = memo(function<DataType extends IBaseItemType>(
+export const DraggableGrid = function<DataType extends IBaseItemType>(
   props: IDraggableGridProps<DataType>,
 ) {
   const [blockHeight, setBlockHeight] = useState(0)
@@ -372,7 +372,7 @@ export const DraggableGrid = memo(function<DataType extends IBaseItemType>(
       </Block>
     )
   })
-  console.log('test');
+  
   return (
     <Animated.View
       style={[
@@ -387,7 +387,7 @@ export const DraggableGrid = memo(function<DataType extends IBaseItemType>(
       {hadInitBlockSize && itemList}
     </Animated.View>
   )
-});
+};
 
 const styles = StyleSheet.create({
   draggableGrid: {
