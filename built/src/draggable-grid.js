@@ -322,9 +322,9 @@ exports.DraggableGrid = function (props) {
         styles.draggableGrid,
         props.style,
         {
-            height: gridLayout.height,
+            height: gridHeight,
         },
-    ]} onLayout={assessGridSize}>
+    ]} onLayout={assessGridSize} useNativeDriver={true}>
       {hadInitBlockSize && itemList}
     </react_native_1.Animated.View>);
 };
