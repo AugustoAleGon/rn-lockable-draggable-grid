@@ -64,12 +64,12 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
   const [gridHeight] = useState<Animated.Value>(new Animated.Value(0))
   const [hadInitBlockSize, setHadInitBlockSize] = useState(false)
   const [dragStartAnimatedValue] = useState(new Animated.Value(1))
-  const [gridLayout, setGridLayout]: [{x: number, y: number, width: number, height: number}, any] = useState({
+  const [gridLayout, setGridLayout] = useState({
     x: 0,
     y: 0,
     width: 0,
     height: 0,
-  } as {x: number, y: number, width: number, height: number})
+  })
   const [activeItemIndex, setActiveItemIndex] = useState<undefined | number>()
 
   const assessGridSize = (event: IOnLayoutEvent) => {
@@ -379,7 +379,7 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
         styles.draggableGrid,
         props.style,
         {
-          height: gridLayout.height,
+          height: gridHeight,
         },
       ]}
       onLayout={assessGridSize}>
