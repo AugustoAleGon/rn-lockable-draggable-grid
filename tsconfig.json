@@ -7,9 +7,10 @@
     "jsx": "react-native",
     "lib": ["dom", "es5", "es6", "scripthost"],
     "target": "es5",
-    "outDir": "built",
+    "outDir": "dist",
     "sourceMap": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "declaration": true,
   },
   "exclude": ["node_modules", "demo"]
 }
