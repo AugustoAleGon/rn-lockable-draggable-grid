@@ -1,4 +1,8 @@
-# @tailwindapp/rn-lockable-draggable-grid
+# rn-lockable-draggable-grid
+
+This is a drag-and-drop grid for React Native. Items can be locked to prevent
+dragging, and they can also have their position locked so that they do not
+reorder as other items shift around.
 
 ## Demo
 
@@ -6,10 +10,6 @@
   <img alt="Issue Stats" width="400" src="https://github.com/SHISME/react-native-draggable-grid/blob/master/example.gif?raw=true">
 </p>
 
-
-## Getting Started
-
-You'll need to use Node 10 to build this, otherwise the dependencies won't compile.
 
 ## Installation
 
@@ -186,4 +186,7 @@ If you want to use your custom animation, you can do like this
 
 if you want resort item yourself,you only need change the data's sort, and the draggable-grid will auto resort by your data.
 
-> the data's key must unique
+## Contributor Notes
+
+ * You'll need to use Node 10 to build this, otherwise the dependencies won't compile.
+ * Use yarn instead of npm
