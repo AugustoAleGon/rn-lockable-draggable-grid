@@ -8,7 +8,7 @@
     "grid",
     "drag and drop"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A draggable grid for react native",
   "main": "built/src/index.js",
   "types": "src/index.ts",
