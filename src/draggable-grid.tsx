@@ -1,3 +1,5 @@
+/** @format */
+
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import {
@@ -25,7 +27,12 @@ interface IBaseItemType {
 export interface IDraggableGridProps<DataType extends IBaseItemType> {
   numColumns: number
   data: DataType[]
-  renderItem: (item: DataType, order: number) => React.ReactElement<any>
+  renderItem: (
+    item: DataType,
+    order: number,
+    onPress: () => void,
+    onLongPress: () => void,
+  ) => React.ReactElement<any>
   style?: ViewStyle
   itemHeight?: number
   dragStartAnimation?: StyleProp<any>
@@ -368,11 +375,16 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
         style={getBlockStyle(itemIndex)}
         dragStartAnimationStyle={getDragStartAnimation(itemIndex)}
         key={item.key}>
-        {props.renderItem(item.itemData, orderMap[item.key].order)}
+        {props.renderItem(
+          item.itemData,
+          orderMap[item.key].order,
+          onBlockPress.bind(null, itemIndex),
+          setActiveBlock.bind(null, itemIndex, item.itemData),
+        )}
       </Block>
     )
   })
-  
+
   return (
     <Animated.View
       style={[
@@ -382,12 +394,11 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
           height: gridHeight,
         },
       ]}
-      onLayout={assessGridSize}
-      useNativeDriver={true}>
+      onLayout={assessGridSize}>
       {hadInitBlockSize && itemList}
     </Animated.View>
   )
-};
+}
 
 const styles = StyleSheet.create({
   draggableGrid: {

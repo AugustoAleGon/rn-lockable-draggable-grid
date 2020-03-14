@@ -1,20 +1,17 @@
 {
-  "name": "@tailwindapp/rn-lockable-draggable-grid",
+  "name": "react-native-draggable-grid-thing",
   "keywords": [
     "drag",
-    "drop",
     "sortable",
-    "lockable",
-    "grid",
-    "drag and drop"
+    "grid"
   ],
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A draggable grid for react native",
   "main": "built/src/index.js",
   "types": "src/index.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tailwind/rn-lockable-draggable-grid.git"
+    "url": "https://github.com/SHISME/react-native-draggable-grid"
   },
   "scripts": {
     "built": "rm -rf built && tsc",
@@ -39,11 +36,8 @@
       "<rootDir>/test/**/?(*.)(spec|test).ts?(x)"
     ]
   },
-  "pre-commit": [
-    "test"
-  ],
-  "author": "codycrowok",
-  "license": "MIT",
+  "author": "shisme",
+  "license": "ISC",
   "devDependencies": {
     "@types/jest": "^24.0.18",
     "@types/react": "^16.0.0",
@@ -61,13 +55,5 @@
   "peerDependencies": {
     "react": "^16.0.0",
     "react-native": "*"
-  },
-  "bugs": {
-    "url": "https://github.com/tailwind/rn-lockable-draggable-grid/issues"
-  },
-  "homepage": "https://github.com/tailwind/rn-lockable-draggable-grid#readme",
-  "directories": {
-    "test": "test"
-  },
-  "dependencies": {}
+  }
 }

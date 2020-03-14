@@ -1,4 +1,5 @@
 "use strict";
+/** @format */
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -315,7 +316,7 @@ exports.DraggableGrid = function (props) {
     }
     var itemList = items.map(function (item, itemIndex) {
         return (<block_1.Block onPress={onBlockPress.bind(null, itemIndex)} onLongPress={setActiveBlock.bind(null, itemIndex, item.itemData)} panHandlers={panResponder.panHandlers} style={getBlockStyle(itemIndex)} dragStartAnimationStyle={getDragStartAnimation(itemIndex)} key={item.key}>
-        {props.renderItem(item.itemData, orderMap[item.key].order)}
+        {props.renderItem(item.itemData, orderMap[item.key].order, onBlockPress.bind(null, itemIndex), setActiveBlock.bind(null, itemIndex, item.itemData))}
       </block_1.Block>);
     });
     return (<react_native_1.Animated.View style={[
@@ -324,7 +325,7 @@ exports.DraggableGrid = function (props) {
         {
             height: gridHeight,
         },
-    ]} onLayout={assessGridSize} useNativeDriver={true}>
+    ]} onLayout={assessGridSize}>
       {hadInitBlockSize && itemList}
     </react_native_1.Animated.View>);
 };
