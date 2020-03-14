@@ -1,9 +1,4 @@
-# react-native-draggable-grid
-
-[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu) [![LICENSE](https://img.shields.io/badge/license-NPL%20(The%20996%20Prohibited%20License)-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
-
-
-[中文文档](./README_CN.md)
+# @tailwindapp/rn-lockable-draggable-grid
 
 ## Demo
 
@@ -14,10 +9,12 @@
 
 ## Getting Started
 
+You'll need to use Node 10 to build this, otherwise the dependencies won't compile.
+
 ## Installation
 
 ```bash
-npm install react-native-draggable-grid --save
+yarn add @tailwindapp/rn-lockable-draggable-grid
 ```
 
 ## Usage
@@ -30,7 +27,7 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
-import { DraggableGrid } from 'react-native-draggable-grid';
+import { DraggableGrid } from '@tailwindapp/rn-lockable-draggable-grid';
 
 interface MyTestProps {
 
