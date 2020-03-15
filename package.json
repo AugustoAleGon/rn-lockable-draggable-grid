@@ -65,5 +65,7 @@
     "test": "test"
   },
   "dependencies": {},
-  "files": ["dist/*"]
+  "files": [
+    "dist/*"
+  ]
 }
