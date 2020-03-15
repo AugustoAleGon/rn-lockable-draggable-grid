@@ -394,7 +394,10 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
           height: gridHeight,
         },
       ]}
-      onLayout={assessGridSize}>
+      onLayout={assessGridSize}
+      // @ts-ignore
+      useNativeDriver={true}
+    >
       {hadInitBlockSize && itemList}
     </Animated.View>
   )
