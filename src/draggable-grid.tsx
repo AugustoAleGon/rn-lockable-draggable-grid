@@ -376,7 +376,9 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
         panHandlers={panResponder.panHandlers}
         style={getBlockStyle(itemIndex)}
         dragStartAnimationStyle={getDragStartAnimation(itemIndex)}
-        key={item.key}>
+        key={item.key}
+        pressRetentionOffset={{top: 5, bottom: 5, right: 5, left: 5}}
+      >
         {props.renderItem(
           item.itemData,
           orderMap[item.key].order,
