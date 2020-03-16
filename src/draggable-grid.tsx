@@ -377,7 +377,6 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
         style={getBlockStyle(itemIndex)}
         dragStartAnimationStyle={getDragStartAnimation(itemIndex)}
         key={item.key}
-        pressRetentionOffset={{top: 5, bottom: 5, right: 5, left: 5}}
       >
         {props.renderItem(
           item.itemData,

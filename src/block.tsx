@@ -16,12 +16,6 @@ interface BlockProps {
   dragStartAnimationStyle: StyleProp<any>
   onPress?: () => void
   onLongPress: () => void
-  pressRetentionOffset: {
-    top: number,
-    left: number,
-    bottom: number,
-    right: number
-  }
   panHandlers: GestureResponderHandlers
 }
 
@@ -32,20 +26,18 @@ export const Block: FunctionComponent<BlockProps> = ({
   onLongPress,
   children,
   panHandlers,
-  pressRetentionOffset,
 }) => {
   return (
     <LongPressGestureHandler
       onHandlerStateChange={({ nativeEvent }) => {
         if (nativeEvent.state === State.ACTIVE) {
           onLongPress()
-          console.log('here')
         }
       }}
-      minDurationMs={500}>
+      minDurationMs={200}>
     <Animated.View style={[styles.blockContainer, style, dragStartAnimationStyle]} {...panHandlers}>
       <Animated.View>
-        <TouchableWithoutFeedback onPress={onPress} pressRetentionOffset={pressRetentionOffset}>
+        <TouchableWithoutFeedback onPress={onPress}>
           {children}
         </TouchableWithoutFeedback>
       </Animated.View>
