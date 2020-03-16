@@ -233,7 +233,6 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
     Animated.timing(items[itemIndex].currentPosition, {
       toValue: blockPositions[orderMap[itemKey].order],
       duration: 200,
-      useNativeDriver: true,
     }).start()
   }
   function getKeyByOrder(order: number) {
@@ -264,7 +263,6 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
       Animated.timing(dragStartAnimatedValue, {
         toValue: 1.1,
         duration: 100,
-        useNativeDriver: true,
       }).start()
     }
   }
