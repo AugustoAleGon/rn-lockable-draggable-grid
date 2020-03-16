@@ -265,7 +265,7 @@ export const DraggableGrid = function<DataType extends IBaseItemType>(
         toValue: 1.1,
         duration: 100,
         useNativeDriver: true,
-      }).start(),
+      }).start()
     }
   }
   function getBlockStyle(itemIndex: number) {
