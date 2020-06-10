@@ -9,7 +9,6 @@ import {
   GestureResponderHandlers,
 } from 'react-native'
 import { FunctionComponent } from 'react'
-import {State, LongPressGestureHandler} from 'react-native-gesture-handler';
 
 interface BlockProps {
   style?: StyleProp<any>
@@ -28,22 +27,13 @@ export const Block: FunctionComponent<BlockProps> = ({
   panHandlers,
 }) => {
   return (
-    <LongPressGestureHandler
-      onHandlerStateChange={({ nativeEvent }) => {
-        if (nativeEvent.state === State.ACTIVE) {
-          onLongPress()
-        }
-      }}
-      minDurationMs={200}>
     <Animated.View style={[styles.blockContainer, style, dragStartAnimationStyle]} {...panHandlers}>
       <Animated.View>
-        <TouchableWithoutFeedback onPress={onPress}>
+        <TouchableWithoutFeedback onPress={onPress} onLongPress={onLongPress}>
           {children}
         </TouchableWithoutFeedback>
       </Animated.View>
     </Animated.View>
-
-  </LongPressGestureHandler>
   );
 }
 
