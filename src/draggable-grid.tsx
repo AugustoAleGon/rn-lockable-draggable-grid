@@ -41,6 +41,9 @@ export interface IDraggableGridProps<DataType extends IBaseItemType> {
   onDragRelease?: (newSortedData: DataType[]) => void
   onResetSort?: (newSortedData: DataType[]) => void
 }
+interface IMap<T> {
+  [key:string]: T
+}
 interface IPositionOffset {
   x: number
   y: number
@@ -54,18 +57,14 @@ interface IItem<DataType> {
   currentPosition: Animated.AnimatedValueXY
 }
 let activeBlockOffset = { x: 0, y: 0 }
-const blockPositions: IPositionOffset[] = []
-const orderMap: {
-  [itemKey: string]: IOrderMapItem
-} = {}
-const itemMap: {
-  [itemKey: string]: any
-} = {}
-const items: IItem<any>[] = []
 
 export const DraggableGrid = function<DataType extends IBaseItemType>(
   props: IDraggableGridProps<DataType>,
 ) {
+  const [blockPositions] = useState<IPositionOffset[]>([])
+  const [orderMap] = useState<IMap<IOrderMapItem>>({})
+  const [itemMap] = useState<IMap<DataType>>({})
+  const [items] = useState<IItem<DataType>[]>([])
   const [blockHeight, setBlockHeight] = useState(0)
   const [blockWidth, setBlockWidth] = useState(0)
   const [gridHeight] = useState<Animated.Value>(new Animated.Value(0))
